@@ -41,7 +41,7 @@ dependencies {
     testImplementation 'org.spockframework:spock-core:1.2-groovy-2.4'
     testImplementation 'com.wooga.spock.extensions:spock-github-extension:0.1.0'
     testImplementation 'com.github.stefanbirkner:system-rules:1.18.0'
-    testImplementation 'net.bytebuddy:byte-buddy:1.9.12'
+    testImplementation 'net.bytebuddy:byte-buddy:1.10.18'
 }
 
 repositories {
