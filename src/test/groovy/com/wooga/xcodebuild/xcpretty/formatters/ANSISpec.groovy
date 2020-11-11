@@ -32,27 +32,27 @@ class ANSISpec extends Specification implements ANSI {
 
     def "colors text red"() {
         expect:
-        red(text) == "\\e[31m${text}\\e[0m"
+        red(text) == "${new String((char) 27)}[31m${text}${new String((char) 27)}[0m"
     }
 
     def "formats text bold"() {
         expect:
-        white(text) == "\\e[39;1m${text}\\e[0m"
+        white(text) == "${new String((char) 27)}[39;1m${text}${new String((char) 27)}[0m"
     }
 
     def "colors text green"() {
         expect:
-        green(text) == "\\e[32;1m${text}\\e[0m"
+        green(text) == "${new String((char) 27)}[32;1m${text}${new String((char) 27)}[0m"
     }
 
     def "colors text cyan"() {
         expect:
-        cyan(text) == "\\e[36m${text}\\e[0m"
+        cyan(text) == "${new String((char) 27)}[36m${text}${new String((char) 27)}[0m"
     }
 
     def "colors text yellow"() {
         expect:
-        yellow(text) == "\\e[33m${text}\\e[0m"
+        yellow(text) == "${new String((char) 27)}[33m${text}${new String((char) 27)}[0m"
     }
 
     @Unroll
@@ -78,7 +78,7 @@ class ANSISpec extends Specification implements ANSI {
 
     def "can mix random known colors"() {
         expect:
-        ansiParse(text, Color.yellow, Effect.underline) == "\\e[33;4m${text}\\e[0m"
+        ansiParse(text, Color.yellow, Effect.underline) == "${new String((char) 27)}[33;4m${text}${new String((char) 27)}[0m"
     }
 
 }

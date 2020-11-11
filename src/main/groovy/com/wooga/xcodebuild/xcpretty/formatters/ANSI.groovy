@@ -95,6 +95,6 @@ trait ANSI {
         String colorsCode = color.toString()
         String effectCode = effect ? ';' + effect.toString() : ''
 
-        "\\e[${colorsCode}${effectCode}m${text}\\e[${Effect.reset.toString()}m"
+        "${new String((char) 27)}[${colorsCode}${effectCode}m${text}${new String((char) 27)}[${Effect.reset.toString()}m"
     }
 }
