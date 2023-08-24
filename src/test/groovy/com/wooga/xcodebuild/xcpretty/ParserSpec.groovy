@@ -178,7 +178,7 @@ class ParserSpec extends Specification {
         1 * formatter.formatCompile("Resource.swift", "/Users/paul/foo/bar/siesta/Source/Resource.swift")
     }
 
-    @Unroll("parses compiling C and C++ files with #extension")
+    @Unroll("parses compiling C and C++ files with #fileExtension")
     def "parses compiling C and C++ files"() {
         when:
         parser.parse(SAMPLE_ANOTHER_COMPILE.replace('.m', fileExtension))
